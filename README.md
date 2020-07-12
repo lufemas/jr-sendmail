@@ -62,7 +62,7 @@ Whenever you want to send an email you call the <code>jrSendEmail</code> functio
 
   "title" :  [string] Email title
 
-  "body"  : [on level nested object]  Email body, this must be an object with at least one key.
+  "body"  : [object]  Email body, this must be an object with at least one key.
   EXAMPLE:
   const body = {
     greeting: "Hello Sailor!",
