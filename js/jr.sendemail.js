@@ -10,6 +10,7 @@ ${body[key]}
 `
   }
 
+  title = encodeURIComponent(title)
   message = encodeURIComponent(message)
 
   const sendUrl = appUrl+ `?to=${to}&from=${from}&title=${title}&message=${message}`

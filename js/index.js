@@ -10,8 +10,9 @@ $('#send-btn').onclick = (e)=>{
   const phone = $('#phone').value
   const message = $('#message').value
   const sendEmailTo = $('#send-email-to').value
+  const title = `Sent with JR.SendEmail`
 
-  jrSendMail(appUrl, sendEmailTo, from, `Sent with JR.SendEmail`, {
+  jrSendMail(appUrl, sendEmailTo, from, title, {
     warning: 
 `
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -33,7 +34,11 @@ _______________________________________
    })
    .then((res)=>{
      $('#email-sent').style.display = 'inline'
-     console.log('sent')
+     $('#name').value = ""
+     $('#email').value = ""
+     $('#phone').value = ""
+     $('#message').value = ""
+     $('#send-email-to').value = ""
    })
 
 
