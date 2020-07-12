@@ -17,9 +17,14 @@
       <h1>JR.sendmail demo</h1>
     </header>
 
-    <main>
+    <main  class="jr m-m-0 m-1">
 
       <article class="jr w-m-50 m-m-auto">
+
+      <p>Link to <strong><a href="https://github.com/lufemas/jr-web-lib" target="_blank">JR.sendmail</strong> repository</a>.</p>
+
+    
+      <h2>Try it here:</h2>
 
         <form class="">
 
@@ -50,22 +55,109 @@
           </div>
 
 
-          <button class="jr button" id="send-btn"> Send </button>
+          <input class="jr button" type="submit" id="send-btn" value="Send">
+          <strong class="jr card p-1 ml-3" id="email-sent">Email sent!</strong>
+
 
         </form>
+
 
       </article>
 
       <article class="jr w-m-50 m-m-auto mt-m-3">
+        <h2>How to use JR.sendmail</h2>
 
-        <div id="output"></div>
+        <h3>Google Apps Script</h3>
+        <p>JR.sendmail was created using <a href="https://developers.google.com/apps-script" target="_blank">Google Apps Script</a> with the <a target="_blank" href="https://developers.google.com/apps-script/reference/mail/mail-app">Class MailApp Service</a>.</p>
+
+        <p>The first thing you should do is create your Apps Script to be accessed by <b>JR.sendmail</b></p>
+
+        <p>Here is the App Script code:</p>
+
+        <div class="jr card p-05">
+          <code>
+  function doGet(e){
+      return handleResponse(e);
+  }
+  
+  function handleResponse(e) {
+      var to      = e.parameter.to;
+      var from    = e.parameter.from;
+      var title   = e.parameter.title
+      var message = e.parameter.message;
+  
+      MailApp.sendEmail( to, from, title, message)
+      
+      return HtmlService.createHtmlOutput(JSON.stringify(e));
+  }          
+          </code>
+        </div>
+
+        <p>Publish your script with the <em>"Deploy as web app..."</em> option</p>
+        <p>If you want to use it as a contact form or something similar that is open to everyone, you have to choose <code class="jr card pl-05 pr-05">Execute the app as: Me(YOUR_GOOGLE_ACCOUNT)</code> and <code class="jr card pl-05 pr-05">Who has access to the app: Anyone, even anonymous</code>, otherwise the app will ask for user login or block it depending on your choice.</p>
+
+        <p>After that just save your <code class="jr card pl-05 pr-05"> Current Web App URL</code> because you need that to use <strong>JR.sendmail</strong>.</p>
+
+
+        <h3>JR.sendimail on your project</h3>
+
+        <p>To use <strong>JR.sendmail</strong> with you website is very simple, just download <a href="./js/jr.sendemail.js" target="_blank" rel="noopener noreferrer">JR.sendemail.js</a> to your project folder and link it with a SCRIPT tag:</p>
+
+        <code class="jr card pl-05 pr-05">&lt;script src="js/jr.sendemail.js">&lt;/script></code>
+
+
+        <p>Whenever you want to send an email you call the <code class="jr card pl-05 pr-05">jrSendEmail</code> function.</p>
+
+
+        <div class="jr card p-05">
+          <code>
+  jrSendMail(appUrl, to, from, title, body)     
+
+  "appUrl": [string] The URL to your Google Apps Script Web App
+
+  "to"    : [string] Recipient email
+
+  "from"  : [string] Sender email
+
+  "title" :  [string] Email title
+
+  "body"  : [on level nested object]  Email body, this must be an object with at least one key.
+  EXAMPLE:
+  const body = {
+    greeting: "Hello Sailor!",
+    firstName: "John",
+    lastName: "Connor"
+    .
+    .
+    .
+
+  }
+
+  The output message will have the keys name all upper case:
+
+  GREETING:
+  Hello Sailor!
+
+  FIRSTNAME:
+  John
+
+  LASTNAME:
+  Connor
+
+          </code>
+        </div>
+
 
       </article>
 
     </main>
 
-    <footer>
-
+    <footer class="jr card mt-2">
+      <ul class="jr flex-col center p-0">
+        <li class="jr mt-05 text-center">This page uses <strong><a href="https://github.com/lufemas/jr-web-lib" target="_blank">JR.css</a></strong></li>
+        <li class="jr mt-05 text-center">Take a look on my other projects <strong><a href="https://github.com/lufemas" target="_blank">JR.Maschietto</a></strong></li>
+        <li class="jr mt-05 text-center">You can contact me on my web page <strong><a href="http://jrmaschietto.com" target="_blank">JRmaschietto.com</a></strong></li>
+      </ul>
     </footer>
 
 		<script src="js/jr.sendemail.js"></script>

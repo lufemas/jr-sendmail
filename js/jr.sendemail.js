@@ -1,7 +1,4 @@
-async function jrSendMail(appUrl, to, from, body){
-
-  // to = encodeURIComponent(to)
-  // from = encodeURIComponent(from)
+async function jrSendMail(appUrl, to, from, title, body){
 
   let message = ``
 
@@ -15,12 +12,12 @@ ${body[key]}
 
   message = encodeURIComponent(message)
 
-  const sendUrl = appUrl+ `?to=${to}&from=${from}&message=${message}`
+  const sendUrl = appUrl+ `?to=${to}&from=${from}&title=${title}&message=${message}`
   console.log(sendUrl)
 
     const response = await fetch(sendUrl, {
-      method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      mode: 'no-cors', // no-cors, *cors, same-origin
+      method: 'GET', 
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       }
