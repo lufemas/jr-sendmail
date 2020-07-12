@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JR.sendemail</title>
+		<meta name="description" content="JR.sendemail a simple way to send email from your website">
+		<meta name="author" content="JR.maschietto">
+		<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/jr.css">
+	</head>
+	<body>
+
+    <header class="jr text-center mt-2">
+      <img src="./img/jr.sendmail.png" alt="JR.sendemail logo">
+      <h1>JR.sendmail demo</h1>
+    </header>
+
+    <main>
+
+      <article class="jr w-m-50 m-m-auto">
+
+        <form class="">
+
+          <div class="jr flex-col">
+            <label class="jr" for="name">Your Name</label>
+            <input class="jr" type="text" name="name" id="name">
+          </div>
+
+          <div class="jr flex-col">
+            <label class="jr" for="email">Your Email</label>
+            <input class="jr" type="email" name="email" id="email">
+          </div>
+
+          <div class="jr flex-col">
+            <label class="jr" for="phone">Your Phone</label>
+            <input class="jr" type="text" name="phone" id="phone">
+          </div>
+
+
+          <div class="jr flex-col">
+            <label class="jr" for="message">Message</label>
+            <textarea class="jr" name="message" id="message" cols="30" rows="10"></textarea>
+          </div>
+
+          <div class="jr flex-col">
+            <label class="jr" for="send-email-to">Sent to Email</label>
+            <input class="jr" type="email" name="sendtoemail" id="send-email-to">
+          </div>
+
+
+          <button class="jr button" id="send-btn"> Send </button>
+
+        </form>
+
+      </article>
+
+      <article class="jr w-m-50 m-m-auto mt-m-3">
+
+        <div id="output"></div>
+
+      </article>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+		<script src="js/jr.sendemail.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>
