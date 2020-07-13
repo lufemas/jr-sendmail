@@ -6,28 +6,13 @@ $('#send-btn').onclick = (e)=>{
   e.preventDefault()
 
   const name = $('#name').value
-  const from = 'FAKE' + $('#email').value
+  const from = $('#email').value
   const phone = $('#phone').value
   const message = $('#message').value
   const sendEmailTo = $('#send-email-to').value
   const title = `Sent with JR.SendEmail`
 
   jrSendMail(appUrl, sendEmailTo, from, title, {
-    warning: 
-`
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-THIS  EMAIL ISN'T REAL
-IT WAS GENERATED USING A DEMO TOOL
-YOU CAN CHECK MORE ABOUT IT AT:
-https://github.com/lufemas/jr-sendmail
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-WARNING
-
-
-_______________________________________
-`,
     name: name,
     phone: phone,
     message : message

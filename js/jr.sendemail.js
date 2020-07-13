@@ -1,3 +1,48 @@
+/**  JR.sendemail
+* https://github.com/lufemas/jr-sendmail
+*
+* jrSendMail(appUrl, to, from, title, body)     
+*
+* "appUrl": [string] The URL to your Google Apps Script Web App
+*
+* "to"    : [string] Recipient email
+*
+* "from"  : [string] Sender email
+*
+* "title" :  [string] Email title
+*
+*
+* "body"  : [object]  Email body, this must be an object with at least one key.
+*
+* EXAMPLE:
+*
+* const body = {
+*
+*   greeting: "Hello Sailor!",
+*
+*   firstName: "John",
+*
+*   lastName: "Connor"
+*
+*   .
+*
+*   .
+*
+*   .
+*
+* }
+*
+* The output message will have the keys name all upper case:
+*
+* GREETING:
+* Hello Sailor!
+*
+* FIRSTNAME:
+* John
+*
+* LASTNAME:
+* Connor 
+*/
 async function jrSendMail(appUrl, to, from, title, body){
 
   let message = ``
